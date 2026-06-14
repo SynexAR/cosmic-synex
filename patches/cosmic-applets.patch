@@ -1,0 +1,28 @@
+From a2234f7091d3776c9e1fe426e0315de2996fad05 Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Sun, 14 Jun 2026 00:27:20 -0300
+Subject: [PATCH] Synex: customize dock favorites (firefox-esr,
+ synex-package-manager)
+
+---
+ .../default_schema/com.system76.CosmicAppList/v1/favorites    | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cosmic-app-list/data/default_schema/com.system76.CosmicAppList/v1/favorites b/cosmic-app-list/data/default_schema/com.system76.CosmicAppList/v1/favorites
+index 9dbd45f1..d64e635d 100644
+--- a/cosmic-app-list/data/default_schema/com.system76.CosmicAppList/v1/favorites
++++ b/cosmic-app-list/data/default_schema/com.system76.CosmicAppList/v1/favorites
+@@ -1,8 +1,8 @@
+ [
+-    "firefox",
++    "firefox-esr",
+     "com.system76.CosmicFiles",
+     "com.system76.CosmicEdit",
+     "com.system76.CosmicTerm",
+-    "com.system76.CosmicStore",
++    "synex-package-manager",
+     "com.system76.CosmicSettings",
+ ]
+-- 
+2.47.3
+

@@ -1,0 +1,26 @@
+From e0fc1ee85dbfdbe85f8863e038303edd465c9fee Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Sat, 13 Jun 2026 22:55:04 -0300
+Subject: [PATCH] Synex: replace appstream-data-pop with appstream (not
+ available in Debian
+
+---
+ debian/control | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/debian/control b/debian/control
+index dd95b59..cde8896 100644
+--- a/debian/control
++++ b/debian/control
+@@ -17,7 +17,7 @@ Homepage: https://github.com/pop-os/cosmic-store
+ Package: cosmic-store
+ Architecture: amd64 arm64
+ Depends:
+-    appstream-data-pop,
++    appstream,
+     apt-config-icons,
+     apt-config-icons-hidpi,
+     apt-config-icons-large,
+-- 
+2.47.3
+

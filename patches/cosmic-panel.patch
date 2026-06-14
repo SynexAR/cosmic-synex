@@ -1,0 +1,21 @@
+From c2f08db8ae580ff1f85925f7db25ffcacd7df830 Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Sun, 14 Jun 2026 00:55:44 -0300
+Subject: [PATCH] Synex: set dock size to medium
+
+---
+ data/default_schema/com.system76.CosmicPanel.Dock/v1/size | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/default_schema/com.system76.CosmicPanel.Dock/v1/size b/data/default_schema/com.system76.CosmicPanel.Dock/v1/size
+index 083b700..ef6bce1 100644
+--- a/data/default_schema/com.system76.CosmicPanel.Dock/v1/size
++++ b/data/default_schema/com.system76.CosmicPanel.Dock/v1/size
+@@ -1 +1 @@
+-L
+\ No newline at end of file
++M
+\ No newline at end of file
+-- 
+2.47.3
+

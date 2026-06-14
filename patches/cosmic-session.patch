@@ -1,0 +1,26 @@
+From 7c69b2a1ae172e64ac836ea62634a5d70ac480dc Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Sat, 13 Jun 2026 22:47:20 -0300
+Subject: [PATCH] Synex: replace pop-fonts with fonts-inter (not available in
+ Debian)
+
+---
+ debian/control | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/debian/control b/debian/control
+index 3fa9fb1..9568ad5 100644
+--- a/debian/control
++++ b/debian/control
+@@ -36,7 +36,7 @@ Depends:
+   fonts-open-sans,
+   gnome-keyring,
+   libsecret-1-0,
+-  pop-fonts,
++  fonts-inter,
+   switcheroo-control,
+   xdg-desktop-portal-cosmic,
+   xwayland,
+-- 
+2.47.3
+

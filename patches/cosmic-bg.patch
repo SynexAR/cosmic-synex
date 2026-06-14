@@ -1,0 +1,24 @@
+From de029e56260d6fe0f6f4b83f599bcd51ea533a9e Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Sun, 14 Jun 2026 00:41:55 -0300
+Subject: [PATCH] Synex: set Synex wallpaper as default background
+
+---
+ data/v1/all | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/v1/all b/data/v1/all
+index d6f0b06..10b882d 100644
+--- a/data/v1/all
++++ b/data/v1/all
+@@ -1,6 +1,6 @@
+ (
+     output: "all",
+-    source: Path("/usr/share/backgrounds/cosmic/orion_nebula_nasa_heic0601a.jpg"),
++    source: Path("/usr/share/backgrounds/synex-2.png"),
+     filter_by_theme: true,
+     rotation_frequency: 3600,
+     filter_method: Lanczos,
+-- 
+2.47.3
+
