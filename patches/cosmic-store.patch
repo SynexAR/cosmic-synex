@@ -1,7 +1,7 @@
 From e0fc1ee85dbfdbe85f8863e038303edd465c9fee Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
 Date: Sat, 13 Jun 2026 22:55:04 -0300
-Subject: [PATCH] Synex: replace appstream-data-pop with appstream (not
+Subject: [PATCH 1/2] Synex: replace appstream-data-pop with appstream (not
  available in Debian
 
 ---
@@ -21,6 +21,33 @@ index dd95b59..cde8896 100644
      apt-config-icons,
      apt-config-icons-hidpi,
      apt-config-icons-large,
+-- 
+2.47.3
+
+
+From 559a9da48cdc3d87a1b9f91308078fde6fac1666 Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Sun, 14 Jun 2026 22:12:43 -0300
+Subject: [PATCH 2/2] Synex: add Debian changelog entry
+
+---
+ debian/changelog | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/debian/changelog b/debian/changelog
+index 44adce2..f7fd8ee 100644
+--- a/debian/changelog
++++ b/debian/changelog
+@@ -1,3 +1,9 @@
++cosmic-store (1.0.16+synex1) UNRELEASED; urgency=medium
++
++  * Replace appstream-data-pop with appstream (not available in Debian)
++
++ -- Synex Team <root@synex.ar>  Sun, 14 Jun 2026 01:55:18 -0300
++
+ cosmic-store (1.0.16) noble; urgency=medium
+ 
+   * Epoch 1.0.16 version update
 -- 
 2.47.3
 

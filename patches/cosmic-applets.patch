@@ -1,7 +1,7 @@
 From a2234f7091d3776c9e1fe426e0315de2996fad05 Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
 Date: Sun, 14 Jun 2026 00:27:20 -0300
-Subject: [PATCH] Synex: customize dock favorites (firefox-esr,
+Subject: [PATCH 1/2] Synex: customize dock favorites (firefox-esr,
  synex-package-manager)
 
 ---
@@ -23,6 +23,33 @@ index 9dbd45f1..d64e635d 100644
 +    "synex-package-manager",
      "com.system76.CosmicSettings",
  ]
+-- 
+2.47.3
+
+
+From b7ed26a66618689e3746bfc6f1a8657f8b8d1de6 Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Sun, 14 Jun 2026 22:12:43 -0300
+Subject: [PATCH 2/2] Synex: add Debian changelog entry
+
+---
+ debian/changelog | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/debian/changelog b/debian/changelog
+index 3d46c583..49022289 100644
+--- a/debian/changelog
++++ b/debian/changelog
+@@ -1,3 +1,9 @@
++cosmic-applets (1.0.15+synex1) UNRELEASED; urgency=medium
++
++  * Customize default dock favorites for Synex
++
++ -- Synex Team <root@synex.ar>  Sun, 14 Jun 2026 01:55:18 -0300
++
+ cosmic-applets (1.0.15) noble; urgency=medium
+ 
+   * Update changelog
 -- 
 2.47.3
 

@@ -1,7 +1,7 @@
 From c2f08db8ae580ff1f85925f7db25ffcacd7df830 Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
 Date: Sun, 14 Jun 2026 00:55:44 -0300
-Subject: [PATCH] Synex: set dock size to medium
+Subject: [PATCH 1/2] Synex: set dock size to medium
 
 ---
  data/default_schema/com.system76.CosmicPanel.Dock/v1/size | 2 +-
@@ -16,6 +16,35 @@ index 083b700..ef6bce1 100644
 \ No newline at end of file
 +M
 \ No newline at end of file
+-- 
+2.47.3
+
+
+From f921d973d4563a0df732805f1cab1c34e7146806 Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Sun, 14 Jun 2026 22:12:43 -0300
+Subject: [PATCH 2/2] Synex: add Debian changelog entry
+
+---
+ debian/changelog | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/debian/changelog b/debian/changelog
+index 41010c3..b3322d3 100644
+--- a/debian/changelog
++++ b/debian/changelog
+@@ -1,5 +1,9 @@
+-cosmic-panel (0.1.0) UNRELEASED; urgency=medium
++cosmic-panel (0.1.0+synex1) UNRELEASED; urgency=medium
+ 
++  [ Ashley Wulber ]
+   * Initial release.
+ 
+- -- Ashley Wulber <ashley@system76.com>  Thu, 05 May 2022 09:39:19 -0700
++  [ Synex Team ]
++  * Set default dock size to medium
++
++ -- Synex Team <root@synex.ar>  Sun, 14 Jun 2026 01:55:19 -0300
 -- 
 2.47.3
 
