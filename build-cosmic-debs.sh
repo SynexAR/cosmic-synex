@@ -1,22 +1,22 @@
 #!/bin/bash
-# build-cosmic-debs.sh — Construcción masiva de paquetes .deb de COSMIC para Synex
-# Uso: ./build-cosmic-debs.sh [componente ...]
-#   Sin argumentos: construye todos los componentes.
-#   Con argumentos: construye solo los indicados (ej.: ./build-cosmic-debs.sh cosmic-comp cosmic-panel)
+# build-cosmic-debs.sh — Bulk build of COSMIC .deb packages for Synex
+# Usage: ./build-cosmic-debs.sh [component ...]
+#   No arguments: builds all components.
+#   With arguments: builds only the listed ones (e.g.: ./build-cosmic-debs.sh cosmic-comp cosmic-panel)
 #
-# Requisitos previos:
-#   - sysext desactivado (sudo systemd-sysext unmerge) — /usr debe ser escribible
-#   - devscripts, equivs, dpkg-dev instalados
-#   - Ejecutar desde la raíz de ~/cosmic-epoch
+# Prerequisites:
+#   - sysext disabled (sudo systemd-sysext unmerge) — /usr must be writable
+#   - devscripts, equivs, dpkg-dev installed
+#   - Run from the root of ~/cosmic-epoch
 
 set -u
 
 EPOCH_DIR="$(pwd)"
 OUT_DIR="$EPOCH_DIR/synex-debs"
 LOG_DIR="$EPOCH_DIR/synex-debs/logs"
-NC_FLAG="-nc"   # primera pasada: sin clean, aprovecha target/ cacheado. Para builds limpios finales: NC_FLAG=""
+NC_FLAG="-nc"   # first pass: no clean, reuses cached target/. For clean final builds: NC_FLAG=""
 
-# Componentes (según el árbol real de cosmic-epoch)
+# Components (matching the real cosmic-epoch tree)
 ALL_COMPONENTS=(
   cosmic-icons
   cosmic-wallpapers
@@ -46,7 +46,7 @@ ALL_COMPONENTS=(
   cosmic-initial-setup
 )
 
-# Si se pasaron componentes por argumento, usar esos
+# If components were passed as arguments, use those
 if [ $# -gt 0 ]; then
   COMPONENTS=("$@")
 else
@@ -59,20 +59,20 @@ OK_LIST=()
 FAIL_LIST=()
 SKIP_LIST=()
 
-echo "=== Build de paquetes COSMIC para Synex ==="
-echo "Componentes: ${#COMPONENTS[@]}"
-echo "Salida: $OUT_DIR"
+echo "=== Build of COSMIC packages for Synex ==="
+echo "Components: ${#COMPONENTS[@]}"
+echo "Output: $OUT_DIR"
 echo "Logs:   $LOG_DIR"
 echo
 
 for c in "${COMPONENTS[@]}"; do
   if [ ! -d "$EPOCH_DIR/$c" ]; then
-    echo "[SKIP] $c — directorio no existe"
+    echo "[SKIP] $c — directory does not exist"
     SKIP_LIST+=("$c")
     continue
   fi
   if [ ! -f "$EPOCH_DIR/$c/debian/control" ]; then
-    echo "[SKIP] $c — sin debian/control (empaquetar a mano)"
+    echo "[SKIP] $c — no debian/control (package manually)"
     SKIP_LIST+=("$c")
     continue
   fi
@@ -81,38 +81,38 @@ for c in "${COMPONENTS[@]}"; do
   LOG="$LOG_DIR/$c.log"
   cd "$EPOCH_DIR/$c" || { FAIL_LIST+=("$c (cd)"); continue; }
 
-  # Build-deps: instalar las declaradas; si falla (nombres de Ubuntu/Pop), no abortar:
-  # el build igual puede funcionar porque las deps reales ya están instaladas.
+  # Build-deps: install the declared ones; if it fails (Ubuntu/Pop names), don't abort:
+  # the build can still work because the real deps are already installed.
   echo "--- mk-build-deps ---" > "$LOG"
   if ! sudo mk-build-deps -i -r -t 'apt-get -y --no-install-recommends' debian/control >> "$LOG" 2>&1; then
-    echo "  (aviso) mk-build-deps falló — revisar Build-Depends en el log; se intenta el build igual"
+    echo "  (warning) mk-build-deps failed — check Build-Depends in the log; build is attempted anyway"
   fi
 
-  # Vendoring: los debian/rules de Pop esperan un vendor.tar con los crates
-  # pre-empaquetados (build offline). Generarlo si no existe.
+  # Vendoring: Pop's debian/rules expect a vendor.tar with the crates
+  # pre-packaged (offline build). Generate it if it doesn't exist.
   if [ ! -f vendor.tar ]; then
     echo "--- vendor ---" >> "$LOG"
     if [ -f justfile ] && just --summary 2>/dev/null | tr ' ' '\n' | grep -qx vendor; then
-      echo "  generando vendor.tar (just vendor)..."
-      just vendor >> "$LOG" 2>&1 || echo "  (aviso) just vendor falló — ver log"
+      echo "  generating vendor.tar (just vendor)..."
+      just vendor >> "$LOG" 2>&1 || echo "  (warning) just vendor failed — see log"
     elif [ -f Makefile ] && grep -qE '^vendor:' Makefile; then
-      echo "  generando vendor.tar (make vendor)..."
-      make vendor >> "$LOG" 2>&1 || echo "  (aviso) make vendor falló — ver log"
+      echo "  generating vendor.tar (make vendor)..."
+      make vendor >> "$LOG" 2>&1 || echo "  (warning) make vendor failed — see log"
     fi
   fi
 
-  # Build del paquete binario, sin firmar, ignorando versiones de build-deps (-d),
-  # sin clean (-nc) para aprovechar target/ cacheado.
+  # Build the binary package, unsigned, ignoring build-dep versions (-d),
+  # without clean (-nc) to reuse cached target/.
   echo "--- dpkg-buildpackage ---" >> "$LOG"
   if dpkg-buildpackage -us -uc -b -d $NC_FLAG >> "$LOG" 2>&1; then
     echo "  OK"
     OK_LIST+=("$c")
-    # mover artefactos generados en el directorio padre
+    # move artifacts generated in the parent directory
     find "$EPOCH_DIR" -maxdepth 1 -name "*.deb"      -newer "$LOG" -exec mv {} "$OUT_DIR/" \; 2>/dev/null
     mv "$EPOCH_DIR"/*.deb "$OUT_DIR/" 2>/dev/null
     mv "$EPOCH_DIR"/*.buildinfo "$EPOCH_DIR"/*.changes "$OUT_DIR/" 2>/dev/null
   else
-    echo "  FALLO — ver $LOG (últimas líneas:)"
+    echo "  FAIL — see $LOG (last lines:)"
     tail -n 8 "$LOG" | sed 's/^/    /'
     FAIL_LIST+=("$c")
   fi
@@ -121,12 +121,12 @@ done
 
 cd "$EPOCH_DIR"
 
-echo "==================== RESUMEN ===================="
+echo "==================== SUMMARY ===================="
 echo "OK    (${#OK_LIST[@]}): ${OK_LIST[*]:-—}"
-echo "FALLO (${#FAIL_LIST[@]}): ${FAIL_LIST[*]:-—}"
+echo "FAIL  (${#FAIL_LIST[@]}): ${FAIL_LIST[*]:-—}"
 echo "SKIP  (${#SKIP_LIST[@]}): ${SKIP_LIST[*]:-—}"
 echo
-echo "Paquetes generados:"
-ls -1 "$OUT_DIR"/*.deb 2>/dev/null | sed 's/^/  /' || echo "  (ninguno)"
+echo "Generated packages:"
+ls -1 "$OUT_DIR"/*.deb 2>/dev/null | sed 's/^/  /' || echo "  (none)"
 echo
-echo "Logs por componente en: $LOG_DIR"
+echo "Per-component logs in: $LOG_DIR"
