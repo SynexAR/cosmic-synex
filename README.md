@@ -66,6 +66,15 @@ When a new COSMIC version is released:
 2. Run `apply-patches.sh`. If a patch doesn't apply cleanly (because upstream changed the same lines), `git am` will report it for manual resolution.
 3. Resolve, regenerate the affected patch with `git format-patch`, and rebuild.
 
+## Additional packages
+
+COSMIC depends on two packages from the Pop!_OS ecosystem that are not available in Debian. They are built unmodified from their upstream sources and are not part of this patch set:
+
+- **pop-icon-theme** — built from https://github.com/pop-os/icon-theme
+- **adw-gtk3** — built from https://github.com/pop-os/adw-gtk3
+
+Build these separately and include them in your package repository alongside the patched COSMIC components.
+
 ## License
 
 The patches are released under the same license as the COSMIC components they modify (GPL-3.0). COSMIC's source code belongs to System76 and retains its respective licenses.

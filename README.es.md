@@ -66,6 +66,15 @@ Al publicarse una nueva versión de COSMIC:
 2. Ejecutar `apply-patches.sh`. Si algún parche no aplica limpio (porque upstream modificó las mismas líneas), `git am` lo indica para resolución manual.
 3. Resolver, regenerar el parche afectado con `git format-patch`, y reconstruir.
 
+## Paquetes adicionales
+
+COSMIC depende de dos paquetes del ecosistema Pop!_OS que no están disponibles en Debian. Se construyen sin modificar desde sus fuentes originales y no forman parte de este conjunto de parches:
+
+- **pop-icon-theme** — se construye desde https://github.com/pop-os/icon-theme
+- **adw-gtk3** — se construye desde https://github.com/pop-os/adw-gtk3
+
+Construilos por separado e incluilos en tu repositorio de paquetes junto con los componentes de COSMIC parcheados.
+
 ## Licencia
 
 Los parches se publican bajo la misma licencia que los componentes de COSMIC que modifican (GPL-3.0). El código de COSMIC pertenece a System76 y mantiene sus respectivas licencias.
