@@ -36,7 +36,7 @@ cosmic-synex/
 
 ## Usage
 
-Requirements: `git`, the Debian packaging tools (`devscripts`, `equivs`, `dpkg-dev`) and the Rust toolchain (via `rustup`).
+Requirements: `git` (with `user.name` and `user.email` configured — `apply-patches.sh` uses `git am`, which creates commits), the Debian packaging tools (`devscripts`, `equivs`, `dpkg-dev`) and the Rust toolchain (via `rustup`).
 
 ```bash
 # 1. Clone this repository

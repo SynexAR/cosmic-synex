@@ -36,11 +36,11 @@ cosmic-synex/
 
 ## Uso
 
-Requisitos: `git`, las herramientas de construcción de paquetes Debian (`devscripts`, `equivs`, `dpkg-dev`) y el toolchain de Rust (vía `rustup`).
+Requisitos: `git` (con `user.name` y `user.email` configurados — `apply-patches.sh` usa `git am`, que crea commits), las herramientas de construcción de paquetes Debian (`devscripts`, `equivs`, `dpkg-dev`) y el toolchain de Rust (vía `rustup`).
 
 ```bash
 # 1. Clonar este repositorio
-git clone git@github.com:SynexAR/cosmic-synex.git
+git clone https://github.com/SynexAR/cosmic-synex.git
 cd cosmic-synex
 
 # 2. Descargar COSMIC y aplicar los parches
