@@ -56,7 +56,9 @@ The resulting packages are placed in `cosmic-epoch/synex-debs/`.
 
 ## Version
 
-The patches are generated against the **`epoch-1.0.16`** tag of cosmic-epoch. The target version is defined by the `COSMIC_TAG` variable in `apply-patches.sh`.
+The patches are generated against the **`epoch-1.1.0`** tag of cosmic-epoch. The target version is defined by the `COSMIC_TAG` variable in `apply-patches.sh`.
+
+All packages are versioned by the superproject tag (`X.Y.Z+synexN`), not by each component's internal changelog. The version is applied at build time via `dch`, defined in the `SYNEX_VERSION` variable of `build-cosmic-debs.sh`. To use your own versioning, edit that variable.
 
 ## Maintenance
 
