@@ -20,6 +20,8 @@ NC_FLAG="-nc"   # first pass: no clean, reuses cached target/. For clean final b
 # not by each component's internal changelog. Bump this on every COSMIC release.
 SYNEX_VERSION="1.1.0+synex1"
 SYNEX_MESSAGE="Rebuild for COSMIC epoch-1.1.0"
+export DEBEMAIL="root@synex.ar"
+export DEBFULLNAME="Synex Team"
 
 # Components (matching the real cosmic-epoch tree)
 ALL_COMPONENTS=(
