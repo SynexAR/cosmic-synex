@@ -1,7 +1,7 @@
-From de029e56260d6fe0f6f4b83f599bcd51ea533a9e Mon Sep 17 00:00:00 2001
+From 691fe1fa28b2ae089093faeba03420a26767ac2f Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
 Date: Sun, 14 Jun 2026 00:41:55 -0300
-Subject: [PATCH 1/2] Synex: set Synex wallpaper as default background
+Subject: [PATCH] Synex: set Synex wallpaper as default background
 
 ---
  data/v1/all | 2 +-
@@ -19,35 +19,6 @@ index d6f0b06..10b882d 100644
      filter_by_theme: true,
      rotation_frequency: 3600,
      filter_method: Lanczos,
--- 
-2.47.3
-
-
-From 4fd186b5dddbaf226f87df8ec123fd30fe7ff9d9 Mon Sep 17 00:00:00 2001
-From: Bruno Ernesto Russo <root@synex.ar>
-Date: Sun, 14 Jun 2026 22:12:43 -0300
-Subject: [PATCH 2/2] Synex: add Debian changelog entry
-
----
- debian/changelog | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
-
-diff --git a/debian/changelog b/debian/changelog
-index 19caa04..711cd63 100644
---- a/debian/changelog
-+++ b/debian/changelog
-@@ -1,5 +1,9 @@
--cosmic-bg (0.1.0) UNRELEASED; urgency=medium
-+cosmic-bg (0.1.0+synex1) UNRELEASED; urgency=medium
- 
-+  [ Ashley Wulber ]
-   * Initial release.
- 
-- -- Ashley Wulber <ashley@system76.com>  Thu, 07 Apr 2022 09:39:19 -0700
-+  [ Synex Team ]
-+  * Set Synex wallpaper as default background
-+
-+ -- Synex Team <root@synex.ar>  Sun, 14 Jun 2026 01:55:19 -0300
 -- 
 2.47.3
 

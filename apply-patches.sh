@@ -13,7 +13,7 @@
 set -eu
 
 # --- Configuration ---
-COSMIC_TAG="epoch-1.0.16"
+COSMIC_TAG="epoch-1.1.0"
 COSMIC_REPO="https://github.com/pop-os/cosmic-epoch"
 PATCHES_DIR="$(cd "$(dirname "$0")" && pwd)/patches"
 WORK_DIR="${1:-$(pwd)}"

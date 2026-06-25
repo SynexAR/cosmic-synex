@@ -16,6 +16,11 @@ OUT_DIR="$EPOCH_DIR/synex-debs"
 LOG_DIR="$EPOCH_DIR/synex-debs/logs"
 NC_FLAG="-nc"   # first pass: no clean, reuses cached target/. For clean final builds: NC_FLAG=""
 
+# Synex package version: all packages are versioned by the superproject tag,
+# not by each component's internal changelog. Bump this on every COSMIC release.
+SYNEX_VERSION="1.1.0+synex1"
+SYNEX_MESSAGE="Rebuild for COSMIC epoch-1.1.0"
+
 # Components (matching the real cosmic-epoch tree)
 ALL_COMPONENTS=(
   cosmic-icons
@@ -44,6 +49,7 @@ ALL_COMPONENTS=(
   cosmic-store
   cosmic-player
   cosmic-initial-setup
+  cosmic-monitor
 )
 
 # If components were passed as arguments, use those
@@ -101,6 +107,12 @@ for c in "${COMPONENTS[@]}"; do
     fi
   fi
 
+  # Synex versioning: force the package version to the superproject tag so apt
+  # always serves the update and all packages stay consistent. Applied at build
+  # time, not as a per-component patch.
+  echo "--- dch (Synex version) ---" >> "$LOG"
+  dch -b -v "$SYNEX_VERSION" --distribution stable "$SYNEX_MESSAGE" >> "$LOG" 2>&1
+
   # Build the binary package, unsigned, ignoring build-dep versions (-d),
   # without clean (-nc) to reuse cached target/.
   echo "--- dpkg-buildpackage ---" >> "$LOG"
@@ -116,6 +128,11 @@ for c in "${COMPONENTS[@]}"; do
     tail -n 8 "$LOG" | sed 's/^/    /'
     FAIL_LIST+=("$c")
   fi
+
+  # Synex versioning: revert the changelog after building so the work tree stays
+  # clean and the Synex entry is never accidentally pulled into a patch.
+  git checkout debian/changelog 2>/dev/null || true
+
   echo
 done
 

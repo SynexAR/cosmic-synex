@@ -1,19 +1,59 @@
-From 0905288633e863c8b66b4859a9be1a3fe49de19c Mon Sep 17 00:00:00 2001
+From 248284b57cf2442eb2b466453910bde0419cf57f Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
-Date: Sat, 13 Jun 2026 23:06:01 -0300
-Subject: [PATCH 1/5] Synex: replace network-manager-gnome with
- nm-connection-editor (avoids duplicate nm-applet in COSMIC)
+Date: Wed, 24 Jun 2026 22:48:17 -0300
+Subject: [PATCH] Synex: apply Synex branding (nm-connection-editor, orange
+ theme, Inter/Hack fonts)
 
 ---
- debian/control | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ debian/control                                |  2 +-
+ debian/install                                |  1 +
+ .../v1/accent                                 |  6 +-
+ .../v1/active_hint                            |  2 +-
+ .../com.system76.CosmicTheme.Dark/v1/accent   | 64 +++++++--------
+ .../v1/accent_button                          | 64 +++++++--------
+ .../v1/background                             | 34 ++++----
+ .../com.system76.CosmicTheme.Dark/v1/button   | 50 +++++------
+ .../v1/destructive                            | 20 ++---
+ .../v1/destructive_button                     | 26 +++---
+ .../v1/icon_button                            | 56 ++++++-------
+ .../v1/link_button                            | 42 +++++-----
+ .../com.system76.CosmicTheme.Dark/v1/palette  | 68 +++++++--------
+ .../com.system76.CosmicTheme.Dark/v1/primary  | 46 +++++------
+ .../v1/secondary                              | 44 +++++-----
+ .../com.system76.CosmicTheme.Dark/v1/success  | 24 +++---
+ .../v1/text_button                            | 56 ++++++-------
+ .../com.system76.CosmicTheme.Dark/v1/warning  | 20 ++---
+ .../v1/warning_button                         | 22 ++---
+ .../v1/accent                                 |  6 +-
+ .../v1/active_hint                            |  2 +-
+ .../com.system76.CosmicTheme.Light/v1/accent  | 68 +++++++--------
+ .../v1/accent_button                          | 66 +++++++--------
+ .../v1/accent_text                            |  7 +-
+ .../v1/background                             | 42 +++++-----
+ .../com.system76.CosmicTheme.Light/v1/button  | 52 ++++++------
+ .../v1/destructive                            | 34 ++++----
+ .../v1/destructive_button                     | 36 ++++----
+ .../v1/icon_button                            | 44 +++++-----
+ .../v1/link_button                            | 32 ++++----
+ .../com.system76.CosmicTheme.Light/v1/palette | 82 +++++++++----------
+ .../com.system76.CosmicTheme.Light/v1/primary | 52 ++++++------
+ .../v1/secondary                              | 40 ++++-----
+ .../com.system76.CosmicTheme.Light/v1/success | 36 ++++----
+ .../v1/text_button                            | 44 +++++-----
+ .../com.system76.CosmicTheme.Light/v1/warning | 30 +++----
+ .../v1/warning_button                         | 28 +++----
+ .../com.system76.CosmicTk/v1/interface_font   |  6 ++
+ .../com.system76.CosmicTk/v1/monospace_font   |  6 ++
+ 39 files changed, 689 insertions(+), 671 deletions(-)
+ create mode 100644 resources/default_schema/com.system76.CosmicTk/v1/interface_font
+ create mode 100644 resources/default_schema/com.system76.CosmicTk/v1/monospace_font
 
 diff --git a/debian/control b/debian/control
-index c04ab78..23894b7 100644
+index 644e98e..e308d67 100644
 --- a/debian/control
 +++ b/debian/control
-@@ -31,7 +31,7 @@ Depends:
-     cosmic-randr,
+@@ -30,7 +30,7 @@ Depends:
+     cosmic-settings-daemon,
      gettext,
      iso-codes,
 -    network-manager-gnome,
@@ -21,27 +61,16 @@ index c04ab78..23894b7 100644
      network-manager-openvpn,
      network-manager-openvpn-gnome,
      xkb-data,
--- 
-2.47.3
-
-
-From 49f9f259a5ab723f2918755c8971498524c7b9b5 Mon Sep 17 00:00:00 2001
-From: Bruno Ernesto Russo <root@synex.ar>
-Date: Sun, 14 Jun 2026 00:17:33 -0300
-Subject: [PATCH 2/5] Synex: apply Synex theme defaults (orange accent,
- Inter/Hack fonts, active hint)
-
----
- .../com.system76.CosmicTheme.Dark.Builder/v1/accent         | 6 +++---
- .../com.system76.CosmicTheme.Dark.Builder/v1/active_hint    | 2 +-
- .../com.system76.CosmicTheme.Light.Builder/v1/accent        | 6 +++---
- .../com.system76.CosmicTheme.Light.Builder/v1/active_hint   | 2 +-
- .../default_schema/com.system76.CosmicTk/v1/interface_font  | 6 ++++++
- .../default_schema/com.system76.CosmicTk/v1/monospace_font  | 6 ++++++
- 6 files changed, 20 insertions(+), 8 deletions(-)
- create mode 100644 resources/default_schema/com.system76.CosmicTk/v1/interface_font
- create mode 100644 resources/default_schema/com.system76.CosmicTk/v1/monospace_font
-
+diff --git a/debian/install b/debian/install
+index b4f2464..a0cf5f5 100644
+--- a/debian/install
++++ b/debian/install
+@@ -40,4 +40,5 @@
+ /usr/share/cosmic/com.system76.CosmicTheme.Light.Builder
+ /usr/share/cosmic/com.system76.CosmicTheme.Mode
+ /usr/share/cosmic/com.system76.CosmicComp/v1/input_touchpad
++/usr/share/cosmic/com.system76.CosmicTk
+ /usr/share/icons/hicolor
 diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark.Builder/v1/accent b/resources/default_schema/com.system76.CosmicTheme.Dark.Builder/v1/accent
 index 2dddf1b..e03f7d8 100644
 --- a/resources/default_schema/com.system76.CosmicTheme.Dark.Builder/v1/accent
@@ -65,151 +94,6 @@ index e440e5c..d8263ee 100644
 \ No newline at end of file
 +2
 \ No newline at end of file
-diff --git a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/accent b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/accent
-index 571cec0..e03f7d8 100644
---- a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/accent
-+++ b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/accent
-@@ -1,5 +1,5 @@
- Some((
--    red: 0.0,
--    green: 0.32156864,
--    blue: 0.3529412,
-+    red: 0.972549,
-+    green: 0.40392154,
-+    blue: 0.10196078,
- ))
-\ No newline at end of file
-diff --git a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/active_hint b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/active_hint
-index e440e5c..d8263ee 100644
---- a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/active_hint
-+++ b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/active_hint
-@@ -1 +1 @@
--3
-\ No newline at end of file
-+2
-\ No newline at end of file
-diff --git a/resources/default_schema/com.system76.CosmicTk/v1/interface_font b/resources/default_schema/com.system76.CosmicTk/v1/interface_font
-new file mode 100644
-index 0000000..753cfa8
---- /dev/null
-+++ b/resources/default_schema/com.system76.CosmicTk/v1/interface_font
-@@ -0,0 +1,6 @@
-+(
-+    family: "Inter",
-+    weight: Normal,
-+    stretch: Normal,
-+    style: Normal,
-+)
-\ No newline at end of file
-diff --git a/resources/default_schema/com.system76.CosmicTk/v1/monospace_font b/resources/default_schema/com.system76.CosmicTk/v1/monospace_font
-new file mode 100644
-index 0000000..491cde9
---- /dev/null
-+++ b/resources/default_schema/com.system76.CosmicTk/v1/monospace_font
-@@ -0,0 +1,6 @@
-+(
-+    family: "Hack",
-+    weight: Normal,
-+    stretch: Normal,
-+    style: Normal,
-+)
-\ No newline at end of file
--- 
-2.47.3
-
-
-From 01df9db955ebac49c758e74d9181fc81f8fb44f5 Mon Sep 17 00:00:00 2001
-From: Bruno Ernesto Russo <root@synex.ar>
-Date: Sun, 14 Jun 2026 22:12:43 -0300
-Subject: [PATCH 3/5] Synex: add Debian changelog entry
-
----
- debian/changelog | 7 +++++++
- 1 file changed, 7 insertions(+)
-
-diff --git a/debian/changelog b/debian/changelog
-index 02e319d..31cbdae 100644
---- a/debian/changelog
-+++ b/debian/changelog
-@@ -1,3 +1,10 @@
-+cosmic-settings (1.0.12+synex1) UNRELEASED; urgency=medium
-+
-+  * Replace network-manager-gnome with nm-connection-editor; apply Synex
-+    theme defaults
-+
-+ -- Synex Team <root@synex.ar>  Sun, 14 Jun 2026 01:55:18 -0300
-+
- cosmic-settings (1.0.12) noble; urgency=medium
- 
-   * release: 1.0.12
--- 
-2.47.3
-
-
-From 4ac3018cbcaaa6f948d8aedc30c061fb1795937f Mon Sep 17 00:00:00 2001
-From: Bruno Ernesto Russo <root@synex.ar>
-Date: Sun, 14 Jun 2026 22:13:06 -0300
-Subject: [PATCH 4/5] Synex: install CosmicTk schema directory (fixes
- dh_missing on build)
-
----
- debian/install | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/debian/install b/debian/install
-index b4f2464..73f6dd1 100644
---- a/debian/install
-+++ b/debian/install
-@@ -40,4 +40,5 @@
- /usr/share/cosmic/com.system76.CosmicTheme.Light.Builder
- /usr/share/cosmic/com.system76.CosmicTheme.Mode
- /usr/share/cosmic/com.system76.CosmicComp/v1/input_touchpad
-+/usr/share/cosmic/com.system76.CosmicTk/v1
- /usr/share/icons/hicolor
--- 
-2.47.3
-
-
-From 4e264f6ea9768dc69a72f5718977d16d22f272d0 Mon Sep 17 00:00:00 2001
-From: Bruno Ernesto Russo <root@synex.ar>
-Date: Mon, 15 Jun 2026 21:48:43 -0300
-Subject: [PATCH 5/5] Synex: ship pre-built Synex theme (orange accent) for
- clean-install default
-
----
- .../com.system76.CosmicTheme.Dark/v1/accent   | 64 +++++++--------
- .../v1/accent_button                          | 64 +++++++--------
- .../v1/background                             | 34 ++++----
- .../com.system76.CosmicTheme.Dark/v1/button   | 50 +++++------
- .../v1/destructive                            | 20 ++---
- .../v1/destructive_button                     | 26 +++---
- .../v1/icon_button                            | 56 ++++++-------
- .../v1/link_button                            | 42 +++++-----
- .../com.system76.CosmicTheme.Dark/v1/palette  | 68 +++++++--------
- .../com.system76.CosmicTheme.Dark/v1/primary  | 46 +++++------
- .../v1/secondary                              | 44 +++++-----
- .../com.system76.CosmicTheme.Dark/v1/success  | 24 +++---
- .../v1/text_button                            | 56 ++++++-------
- .../com.system76.CosmicTheme.Dark/v1/warning  | 20 ++---
- .../v1/warning_button                         | 22 ++---
- .../com.system76.CosmicTheme.Light/v1/accent  | 68 +++++++--------
- .../v1/accent_button                          | 66 +++++++--------
- .../v1/accent_text                            |  7 +-
- .../v1/background                             | 42 +++++-----
- .../com.system76.CosmicTheme.Light/v1/button  | 52 ++++++------
- .../v1/destructive                            | 34 ++++----
- .../v1/destructive_button                     | 36 ++++----
- .../v1/icon_button                            | 44 +++++-----
- .../v1/link_button                            | 32 ++++----
- .../com.system76.CosmicTheme.Light/v1/palette | 82 +++++++++----------
- .../com.system76.CosmicTheme.Light/v1/primary | 52 ++++++------
- .../v1/secondary                              | 40 ++++-----
- .../com.system76.CosmicTheme.Light/v1/success | 36 ++++----
- .../v1/text_button                            | 44 +++++-----
- .../com.system76.CosmicTheme.Light/v1/warning | 30 +++----
- .../v1/warning_button                         | 28 +++----
- 31 files changed, 667 insertions(+), 662 deletions(-)
-
 diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v1/accent b/resources/default_schema/com.system76.CosmicTheme.Dark/v1/accent
 index 627021d..a1de681 100644
 --- a/resources/default_schema/com.system76.CosmicTheme.Dark/v1/accent
@@ -1501,6 +1385,29 @@ index b3b38a0..ea041fa 100644
          green: 0.0,
          blue: 0.0,
          alpha: 0.5,
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/accent b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/accent
+index 571cec0..e03f7d8 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/accent
++++ b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/accent
+@@ -1,5 +1,5 @@
+ Some((
+-    red: 0.0,
+-    green: 0.32156864,
+-    blue: 0.3529412,
++    red: 0.972549,
++    green: 0.40392154,
++    blue: 0.10196078,
+ ))
+\ No newline at end of file
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/active_hint b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/active_hint
+index e440e5c..d8263ee 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/active_hint
++++ b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v1/active_hint
+@@ -1 +1 @@
+-3
+\ No newline at end of file
++2
+\ No newline at end of file
 diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v1/accent b/resources/default_schema/com.system76.CosmicTheme.Light/v1/accent
 index 9d6abfd..da226d4 100644
 --- a/resources/default_schema/com.system76.CosmicTheme.Light/v1/accent
@@ -2942,6 +2849,32 @@ index 44429b5..a977eb8 100644
          blue: 0.99999994,
          alpha: 0.5,
      ),
+diff --git a/resources/default_schema/com.system76.CosmicTk/v1/interface_font b/resources/default_schema/com.system76.CosmicTk/v1/interface_font
+new file mode 100644
+index 0000000..753cfa8
+--- /dev/null
++++ b/resources/default_schema/com.system76.CosmicTk/v1/interface_font
+@@ -0,0 +1,6 @@
++(
++    family: "Inter",
++    weight: Normal,
++    stretch: Normal,
++    style: Normal,
++)
+\ No newline at end of file
+diff --git a/resources/default_schema/com.system76.CosmicTk/v1/monospace_font b/resources/default_schema/com.system76.CosmicTk/v1/monospace_font
+new file mode 100644
+index 0000000..491cde9
+--- /dev/null
++++ b/resources/default_schema/com.system76.CosmicTk/v1/monospace_font
+@@ -0,0 +1,6 @@
++(
++    family: "Hack",
++    weight: Normal,
++    stretch: Normal,
++    style: Normal,
++)
+\ No newline at end of file
 -- 
 2.47.3
 

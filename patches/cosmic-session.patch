@@ -1,7 +1,7 @@
-From 7c69b2a1ae172e64ac836ea62634a5d70ac480dc Mon Sep 17 00:00:00 2001
+From 716afe0564351575ad9dcda45ba1a347b2f75b15 Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
 Date: Sat, 13 Jun 2026 22:47:20 -0300
-Subject: [PATCH 1/3] Synex: replace pop-fonts with fonts-inter (not available
+Subject: [PATCH 1/2] Synex: replace pop-fonts with fonts-inter (not available
  in Debian)
 
 ---
@@ -25,37 +25,10 @@ index 3fa9fb1..9568ad5 100644
 2.47.3
 
 
-From 08f43c9b0acd6ebfd96f152c90990f4368cd2aec Mon Sep 17 00:00:00 2001
-From: Bruno Ernesto Russo <root@synex.ar>
-Date: Sun, 14 Jun 2026 22:12:43 -0300
-Subject: [PATCH 2/3] Synex: add Debian changelog entry
-
----
- debian/changelog | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/debian/changelog b/debian/changelog
-index e890468..5d81b96 100644
---- a/debian/changelog
-+++ b/debian/changelog
-@@ -1,3 +1,9 @@
-+cosmic-session (1.0.0+synex1) UNRELEASED; urgency=medium
-+
-+  * Replace pop-fonts with fonts-inter (not available in Debian)
-+
-+ -- Synex Team <root@synex.ar>  Sun, 14 Jun 2026 01:52:31 -0300
-+
- cosmic-session (1.0.0) noble; urgency=medium
- 
-   * Initial release
--- 
-2.47.3
-
-
-From 151add33759dc9bec96cb8e08fae9ccd59910492 Mon Sep 17 00:00:00 2001
+From 73fef384558916a87d93bc1de4a6beea5ff72b1b Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
 Date: Mon, 15 Jun 2026 23:14:55 -0300
-Subject: [PATCH 3/3] Synex: added system-db:local to cosmic profile
+Subject: [PATCH 2/2] Synex: added system-db:local to cosmic profile
 
 ---
  data/dconf/profile/cosmic | 1 +
