@@ -40,7 +40,7 @@ Requirements: `git` (with `user.name` and `user.email` configured — `apply-pat
 
 ```bash
 # 1. Clone this repository
-git clone git@github.com:SynexAR/cosmic-synex.git
+git clone https://github.com/SynexAR/cosmic-synex.git
 cd cosmic-synex
 
 # 2. Download COSMIC and apply the patches
