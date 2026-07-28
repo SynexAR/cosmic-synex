@@ -1,0 +1,25 @@
+From ec864c653b91a079e78d42e39a277532f59c4a30 Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Mon, 27 Jul 2026 23:30:54 -0300
+Subject: [PATCH] Synex: add bash shebang to vendor recipe (fixes
+ SOURCE_DATE_EPOCH build failure)
+
+---
+ justfile | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/justfile b/justfile
+index a93d2be..1b0994a 100644
+--- a/justfile
++++ b/justfile
+@@ -60,6 +60,7 @@ install:
+ 
+ # Vendors Cargo dependencies into a tarball
+ vendor:
++    #!/usr/bin/env bash
+     rm -rf .cargo
+     mkdir -p .cargo
+     cargo vendor | head -n -1 > .cargo/config.toml
+-- 
+2.53.0
+
