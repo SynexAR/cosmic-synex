@@ -1,7 +1,7 @@
-From 248284b57cf2442eb2b466453910bde0419cf57f Mon Sep 17 00:00:00 2001
+From 50ed9eb482bd5f8ce7df22d03df8a985837d4451 Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
 Date: Wed, 24 Jun 2026 22:48:17 -0300
-Subject: [PATCH] Synex: apply Synex branding (nm-connection-editor, orange
+Subject: [PATCH 1/2] Synex: apply Synex branding (nm-connection-editor, orange
  theme, Inter/Hack fonts)
 
 ---
@@ -49,10 +49,10 @@ Subject: [PATCH] Synex: apply Synex branding (nm-connection-editor, orange
  create mode 100644 resources/default_schema/com.system76.CosmicTk/v1/monospace_font
 
 diff --git a/debian/control b/debian/control
-index 644e98e..e308d67 100644
+index 703a847..cc4dc5b 100644
 --- a/debian/control
 +++ b/debian/control
-@@ -30,7 +30,7 @@ Depends:
+@@ -31,7 +31,7 @@ Depends:
      cosmic-settings-daemon,
      gettext,
      iso-codes,
@@ -2876,5 +2876,731 @@ index 0000000..491cde9
 +)
 \ No newline at end of file
 -- 
-2.47.3
+2.53.0
+
+
+From dfa13f99d81ed59f0f80c0d2d604880e5a596692 Mon Sep 17 00:00:00 2001
+From: Bruno Ernesto Russo <root@synex.ar>
+Date: Mon, 27 Jul 2026 23:28:22 -0300
+Subject: [PATCH 2/2] Synex: apply orange accent to v2 theme schema (COSMIC
+ 1.3.0)
+
+---
+ .../v2/palette                                |  2 +-
+ .../com.system76.CosmicTheme.Dark/v2/accent   | 18 ++++++++---------
+ .../v2/accent_button                          | 18 ++++++++---------
+ .../v2/background                             |  4 ++--
+ .../com.system76.CosmicTheme.Dark/v2/button   |  4 ++--
+ .../v2/destructive                            |  4 ++--
+ .../v2/destructive_button                     |  4 ++--
+ .../v2/icon_button                            |  4 ++--
+ .../v2/link_button                            |  8 ++++----
+ .../com.system76.CosmicTheme.Dark/v2/palette  |  2 +-
+ .../com.system76.CosmicTheme.Dark/v2/primary  |  4 ++--
+ .../v2/secondary                              |  4 ++--
+ .../com.system76.CosmicTheme.Dark/v2/success  |  4 ++--
+ .../v2/success_button                         |  4 ++--
+ .../v2/text_button                            | 10 +++++-----
+ .../v2/transparent_background                 |  4 ++--
+ .../v2/transparent_primary                    |  4 ++--
+ .../v2/transparent_secondary                  |  4 ++--
+ .../com.system76.CosmicTheme.Dark/v2/warning  |  4 ++--
+ .../v2/warning_button                         |  4 ++--
+ .../v2/palette                                |  2 +-
+ .../com.system76.CosmicTheme.Light/v2/accent  | 20 +++++++++----------
+ .../v2/accent_button                          | 18 ++++++++---------
+ .../v2/background                             |  4 ++--
+ .../com.system76.CosmicTheme.Light/v2/button  |  4 ++--
+ .../v2/destructive                            |  4 ++--
+ .../v2/destructive_button                     |  4 ++--
+ .../v2/icon_button                            |  4 ++--
+ .../v2/link_button                            |  8 ++++----
+ .../com.system76.CosmicTheme.Light/v2/palette |  2 +-
+ .../com.system76.CosmicTheme.Light/v2/primary |  4 ++--
+ .../v2/secondary                              |  4 ++--
+ .../com.system76.CosmicTheme.Light/v2/success |  4 ++--
+ .../v2/success_button                         |  4 ++--
+ .../v2/text_button                            | 10 +++++-----
+ .../v2/transparent_background                 |  4 ++--
+ .../v2/transparent_primary                    |  4 ++--
+ .../v2/transparent_secondary                  |  4 ++--
+ .../com.system76.CosmicTheme.Light/v2/warning |  4 ++--
+ .../v2/warning_button                         |  4 ++--
+ 40 files changed, 115 insertions(+), 115 deletions(-)
+
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark.Builder/v2/palette b/resources/default_schema/com.system76.CosmicTheme.Dark.Builder/v2/palette
+index 16e8c50..b396540 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark.Builder/v2/palette
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark.Builder/v2/palette
+@@ -16,7 +16,7 @@
+     neutral_8: "#BEBEBEFF",
+     neutral_9: "#DEDEDEFF",
+     neutral_10: "#FFFFFFFF",
+-    accent_blue: "#63D0DFFF",
++    accent_blue: "#F8671AFF",
+     accent_indigo: "#A1C0EBFF",
+     accent_purple: "#E79CFEFF",
+     accent_pink: "#FF9CB1FF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/accent b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/accent
+index 5519c3b..08f579c 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/accent
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/accent
+@@ -1,14 +1,14 @@
+ (
+-    base: "#63D0DFFF",
+-    hover: "#63BAC6FF",
+-    pressed: "#3C737AFF",
+-    selected: "#63BAC6FF",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    base: "#F8671AFF",
++    hover: "#DA6629FF",
++    pressed: "#873E18FF",
++    selected: "#DA6629FF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#000000FF",
+     on: "#000000FF",
+-    disabled: "#63D0DFFF",
++    disabled: "#F8671AFF",
+     on_disabled: "#326870FF",
+-    border: "#63D0DFFF",
+-    disabled_border: "#63D0DF80",
++    border: "#F8671AFF",
++    disabled_border: "#F8671A80",
+ )
+\ No newline at end of file
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/accent_button b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/accent_button
+index 0e79e51..131cbe3 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/accent_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/accent_button
+@@ -1,14 +1,14 @@
+ (
+-    base: "#63D0DFFF",
+-    hover: "#63BAC6FF",
+-    pressed: "#3C737AFF",
+-    selected: "#63BAC6FF",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    base: "#F8671AFF",
++    hover: "#DA6629FF",
++    pressed: "#873E18FF",
++    selected: "#DA6629FF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#030303FF",
+     on: "#000000FF",
+-    disabled: "#63D0DFFF",
++    disabled: "#F8671AFF",
+     on_disabled: "#00000080",
+-    border: "#63D0DFFF",
+-    disabled_border: "#63D0DF80",
++    border: "#F8671AFF",
++    disabled_border: "#F8671A80",
+ )
+\ No newline at end of file
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/background b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/background
+index 8568268..5f8e7a2 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/background
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/background
+@@ -5,8 +5,8 @@
+         hover: "#434343FF",
+         pressed: "#585858FF",
+         selected: "#434343FF",
+-        selected_text: "#63D0DFFF",
+-        focus: "#63D0DFFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#C0C0C033",
+         on: "#C0C0C0FF",
+         disabled: "#2E2E2E80",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/button b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/button
+index ea09e2d..413ca52 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/button
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/button
+@@ -3,8 +3,8 @@
+     hover: "#63636366",
+     pressed: "#2B2B2B9F",
+     selected: "#63636366",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#C0C0C033",
+     on: "#C0C0C0FF",
+     disabled: "#9E9E9E20",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/destructive b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/destructive
+index 428c1d1..c858681 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/destructive
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/destructive
+@@ -3,8 +3,8 @@
+     hover: "#E0948FFF",
+     pressed: "#8A5B58FF",
+     selected: "#E0948FFF",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#000000FF",
+     on: "#000000FF",
+     disabled: "#FFA09AFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/destructive_button b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/destructive_button
+index fc8066f..5d65d7b 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/destructive_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/destructive_button
+@@ -3,8 +3,8 @@
+     hover: "#E0948FFF",
+     pressed: "#8A5B58FF",
+     selected: "#E0948FFF",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#030303FF",
+     on: "#000000FF",
+     disabled: "#FFA09AFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/icon_button b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/icon_button
+index cb5fa87..9e77ce1 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/icon_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/icon_button
+@@ -3,8 +3,8 @@
+     hover: "#63636333",
+     pressed: "#16161680",
+     selected: "#63636333",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#BEBEBE33",
+     on: "#BEBEBEFF",
+     disabled: "#00000000",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/link_button b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/link_button
+index eec0dff..346b752 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/link_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/link_button
+@@ -3,10 +3,10 @@
+     hover: "#00000000",
+     pressed: "#00000000",
+     selected: "#00000000",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
+-    divider: "#63D0DF33",
+-    on: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
++    divider: "#F8671A33",
++    on: "#F8671AFF",
+     disabled: "#00000000",
+     on_disabled: "#32687080",
+     border: "#BEBEBEFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/palette b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/palette
+index 16e8c50..b396540 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/palette
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/palette
+@@ -16,7 +16,7 @@
+     neutral_8: "#BEBEBEFF",
+     neutral_9: "#DEDEDEFF",
+     neutral_10: "#FFFFFFFF",
+-    accent_blue: "#63D0DFFF",
++    accent_blue: "#F8671AFF",
+     accent_indigo: "#A1C0EBFF",
+     accent_purple: "#E79CFEFF",
+     accent_pink: "#FF9CB1FF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/primary b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/primary
+index c779f21..e075a83 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/primary
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/primary
+@@ -5,8 +5,8 @@
+         hover: "#4A4A4AFF",
+         pressed: "#5E5E5EFF",
+         selected: "#4A4A4AFF",
+-        selected_text: "#63D0DFFF",
+-        focus: "#63D0DFFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#CACACA33",
+         on: "#CACACAFF",
+         disabled: "#36363680",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/secondary b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/secondary
+index 069a373..473cce5 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/secondary
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/secondary
+@@ -5,8 +5,8 @@
+         hover: "#4F4F4FFF",
+         pressed: "#626262FF",
+         selected: "#4F4F4FFF",
+-        selected_text: "#63D0DFFF",
+-        focus: "#63D0DFFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#D0D0D033",
+         on: "#D0D0D0FF",
+         disabled: "#3B3B3B80",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/success b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/success
+index 8bdbb8b..800695b 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/success
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/success
+@@ -3,8 +3,8 @@
+     hover: "#5FC384FF",
+     pressed: "#3A7851FF",
+     selected: "#5FC384FF",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#000000FF",
+     on: "#000000FF",
+     disabled: "#5EDB8CFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/success_button b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/success_button
+index 972c4f3..57df820 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/success_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/success_button
+@@ -3,8 +3,8 @@
+     hover: "#5FC384FF",
+     pressed: "#3A7851FF",
+     selected: "#5FC384FF",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#030303FF",
+     on: "#000000FF",
+     disabled: "#5EDB8CFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/text_button b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/text_button
+index cd17f71..7bb2bc0 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/text_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/text_button
+@@ -3,12 +3,12 @@
+     hover: "#63636333",
+     pressed: "#16161680",
+     selected: "#63636333",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
+-    divider: "#63D0DF33",
+-    on: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
++    divider: "#F8671A33",
++    on: "#F8671AFF",
+     disabled: "#00000000",
+-    on_disabled: "#63D0DFA6",
++    on_disabled: "#F8671AA6",
+     border: "#BEBEBEFF",
+     disabled_border: "#BEBEBE80",
+ )
+\ No newline at end of file
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_background b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_background
+index 8981793..7dca88b 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_background
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_background
+@@ -5,8 +5,8 @@
+         hover: "#2E2E2E99",
+         pressed: "#2E2E2E99",
+         selected: "#2E2E2E99",
+-        selected_text: "#63D0DFFF",
+-        focus: "#63D0DFFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#C0C0C033",
+         on: "#C0C0C099",
+         disabled: "#2E2E2E4C",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_primary b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_primary
+index 3f25243..26217b6 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_primary
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_primary
+@@ -5,8 +5,8 @@
+         hover: "#363636E6",
+         pressed: "#363636E6",
+         selected: "#363636E6",
+-        selected_text: "#63D0DFFF",
+-        focus: "#63D0DFFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#CACACA33",
+         on: "#CACACAE6",
+         disabled: "#36363673",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_secondary b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_secondary
+index b2a0ac2..aa977e1 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_secondary
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/transparent_secondary
+@@ -5,8 +5,8 @@
+         hover: "#3B3B3BFF",
+         pressed: "#3B3B3BFF",
+         selected: "#3B3B3BFF",
+-        selected_text: "#63D0DFFF",
+-        focus: "#63D0DFFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#D0D0D033",
+         on: "#D0D0D0FF",
+         disabled: "#3B3B3B80",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/warning b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/warning
+index 944161b..c12c587 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/warning
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/warning
+@@ -3,8 +3,8 @@
+     hover: "#E09678FF",
+     pressed: "#8A5C49FF",
+     selected: "#E09678FF",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#000000FF",
+     on: "#000000FF",
+     disabled: "#FFA37DFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/warning_button b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/warning_button
+index e184d57..35b193d 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Dark/v2/warning_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Dark/v2/warning_button
+@@ -3,8 +3,8 @@
+     hover: "#E09678FF",
+     pressed: "#8A5C49FF",
+     selected: "#E09678FF",
+-    selected_text: "#63D0DFFF",
+-    focus: "#63D0DFFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#FFFFFFFF",
+     on: "#000000FF",
+     disabled: "#FFA37DFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v2/palette b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v2/palette
+index 71b3c7d..84eb92c 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v2/palette
++++ b/resources/default_schema/com.system76.CosmicTheme.Light.Builder/v2/palette
+@@ -16,7 +16,7 @@ Light((
+     neutral_8: "#161616FF",
+     neutral_9: "#030303FF",
+     neutral_10: "#000000FF",
+-    accent_blue: "#00525AFF",
++    accent_blue: "#F8671AFF",
+     accent_indigo: "#2E496DFF",
+     accent_purple: "#68217CFF",
+     accent_pink: "#86043AFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/accent b/resources/default_schema/com.system76.CosmicTheme.Light/v2/accent
+index adea896..5aba5ff 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/accent
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/accent
+@@ -1,14 +1,14 @@
+ (
+-    base: "#00525AFF",
+-    hover: "#14555CFF",
+-    pressed: "#5F888CFF",
+-    selected: "#14555CFF",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    base: "#F8671AFF",
++    hover: "#DA6629FF",
++    pressed: "#DB926CFF",
++    selected: "#DA6629FF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#FFFFFFFF",
+     on: "#FFFFFFFF",
+-    disabled: "#00525AFF",
+-    on_disabled: "#7FA8ACFF",
+-    border: "#00525AFF",
+-    disabled_border: "#00525A80",
++    disabled: "#F8671AFF",
++    on_disabled: "#FBB38CFF",
++    border: "#F8671AFF",
++    disabled_border: "#F8671A80",
+ )
+\ No newline at end of file
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/accent_button b/resources/default_schema/com.system76.CosmicTheme.Light/v2/accent_button
+index b9eb27a..088c9b8 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/accent_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/accent_button
+@@ -1,14 +1,14 @@
+ (
+-    base: "#00525AFF",
+-    hover: "#14555CFF",
+-    pressed: "#5F888CFF",
+-    selected: "#14555CFF",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    base: "#F8671AFF",
++    hover: "#DA6629FF",
++    pressed: "#DB926CFF",
++    selected: "#DA6629FF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#DEDEDEFF",
+     on: "#FFFFFFFF",
+-    disabled: "#00525AFF",
++    disabled: "#F8671AFF",
+     on_disabled: "#FFFFFF80",
+-    border: "#00525AFF",
+-    disabled_border: "#00525A80",
++    border: "#F8671AFF",
++    disabled_border: "#F8671A80",
+ )
+\ No newline at end of file
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/background b/resources/default_schema/com.system76.CosmicTheme.Light/v2/background
+index 70dc626..1cb6ea7 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/background
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/background
+@@ -5,8 +5,8 @@
+         hover: "#F6F6F6FF",
+         pressed: "#F7F7F7FF",
+         selected: "#F6F6F6FF",
+-        selected_text: "#00525AFF",
+-        focus: "#00525AFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#27272733",
+         on: "#272727FF",
+         disabled: "#F5F5F580",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/button b/resources/default_schema/com.system76.CosmicTheme.Light/v2/button
+index 5b5826a..33cb433 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/button
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/button
+@@ -3,8 +3,8 @@
+     hover: "#2B2B2B66",
+     pressed: "#6868689F",
+     selected: "#2B2B2B66",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#27272733",
+     on: "#272727FF",
+     disabled: "#2E2E2E20",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/destructive b/resources/default_schema/com.system76.CosmicTheme.Light/v2/destructive
+index a13c718..37b9f0a 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/destructive
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/destructive
+@@ -3,8 +3,8 @@
+     hover: "#811727FF",
+     pressed: "#A3616BFF",
+     selected: "#811727FF",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#FFFFFFFF",
+     on: "#FFFFFFFF",
+     disabled: "#890418FF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/destructive_button b/resources/default_schema/com.system76.CosmicTheme.Light/v2/destructive_button
+index bb2de29..c65f38c 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/destructive_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/destructive_button
+@@ -3,8 +3,8 @@
+     hover: "#811727FF",
+     pressed: "#A3616BFF",
+     selected: "#811727FF",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#DEDEDEFF",
+     on: "#FFFFFFFF",
+     disabled: "#890418FF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/icon_button b/resources/default_schema/com.system76.CosmicTheme.Light/v2/icon_button
+index 52138d5..32dd5f9 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/icon_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/icon_button
+@@ -3,8 +3,8 @@
+     hover: "#63636333",
+     pressed: "#BEBEBE80",
+     selected: "#63636333",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#16161633",
+     on: "#161616FF",
+     disabled: "#00000000",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/link_button b/resources/default_schema/com.system76.CosmicTheme.Light/v2/link_button
+index 826da6e..f0656da 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/link_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/link_button
+@@ -3,10 +3,10 @@
+     hover: "#00000000",
+     pressed: "#00000000",
+     selected: "#00000000",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
+-    divider: "#00525A33",
+-    on: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
++    divider: "#F8671A33",
++    on: "#F8671AFF",
+     disabled: "#00000000",
+     on_disabled: "#00292D80",
+     border: "#161616FF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/palette b/resources/default_schema/com.system76.CosmicTheme.Light/v2/palette
+index 3b9eda9..5f24923 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/palette
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/palette
+@@ -16,7 +16,7 @@
+     neutral_8: "#161616FF",
+     neutral_9: "#030303FF",
+     neutral_10: "#000000FF",
+-    accent_blue: "#00525AFF",
++    accent_blue: "#F8671AFF",
+     accent_indigo: "#2E496DFF",
+     accent_purple: "#68217CFF",
+     accent_pink: "#86043AFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/primary b/resources/default_schema/com.system76.CosmicTheme.Light/v2/primary
+index 8610d9c..c9c1e35 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/primary
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/primary
+@@ -5,8 +5,8 @@
+         hover: "#DEDEDEFF",
+         pressed: "#E2E2E2FF",
+         selected: "#DEDEDEFF",
+-        selected_text: "#00525AFF",
+-        focus: "#00525AFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#14141433",
+         on: "#141414FF",
+         disabled: "#DADADA80",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/secondary b/resources/default_schema/com.system76.CosmicTheme.Light/v2/secondary
+index cb87ef0..d6a7148 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/secondary
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/secondary
+@@ -5,8 +5,8 @@
+         hover: "#F6F6F6FF",
+         pressed: "#F7F7F7FF",
+         selected: "#F6F6F6FF",
+-        selected_text: "#00525AFF",
+-        focus: "#00525AFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#27272733",
+         on: "#272727FF",
+         disabled: "#F5F5F580",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/success b/resources/default_schema/com.system76.CosmicTheme.Light/v2/success
+index 0b24f8c..8760d6e 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/success
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/success
+@@ -3,8 +3,8 @@
+     hover: "#145937FF",
+     pressed: "#5F8A75FF",
+     selected: "#145937FF",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#FFFFFFFF",
+     on: "#FFFFFFFF",
+     disabled: "#00572CFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/success_button b/resources/default_schema/com.system76.CosmicTheme.Light/v2/success_button
+index 8e69154..d87a5f5 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/success_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/success_button
+@@ -3,8 +3,8 @@
+     hover: "#145937FF",
+     pressed: "#5F8A75FF",
+     selected: "#145937FF",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#DEDEDEFF",
+     on: "#FFFFFFFF",
+     disabled: "#00572CFF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/text_button b/resources/default_schema/com.system76.CosmicTheme.Light/v2/text_button
+index b95c9c0..41262e4 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/text_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/text_button
+@@ -3,12 +3,12 @@
+     hover: "#63636333",
+     pressed: "#BEBEBE80",
+     selected: "#63636333",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
+-    divider: "#00525A33",
+-    on: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
++    divider: "#F8671A33",
++    on: "#F8671AFF",
+     disabled: "#00000000",
+-    on_disabled: "#00525AA6",
++    on_disabled: "#F8671AA6",
+     border: "#161616FF",
+     disabled_border: "#16161680",
+ )
+\ No newline at end of file
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_background b/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_background
+index 8f9a00d..c423562 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_background
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_background
+@@ -5,8 +5,8 @@
+         hover: "#F5F5F599",
+         pressed: "#F5F5F599",
+         selected: "#F5F5F599",
+-        selected_text: "#00525AFF",
+-        focus: "#00525AFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#27272733",
+         on: "#27272799",
+         disabled: "#F5F5F54C",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_primary b/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_primary
+index d1f0b03..399ac84 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_primary
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_primary
+@@ -5,8 +5,8 @@
+         hover: "#DADADAD9",
+         pressed: "#DADADAD9",
+         selected: "#DADADAD9",
+-        selected_text: "#00525AFF",
+-        focus: "#00525AFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#14141433",
+         on: "#141414D9",
+         disabled: "#DADADA6C",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_secondary b/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_secondary
+index b8753f1..d757ee0 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_secondary
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/transparent_secondary
+@@ -5,8 +5,8 @@
+         hover: "#F5F5F5FF",
+         pressed: "#F5F5F5FF",
+         selected: "#F5F5F5FF",
+-        selected_text: "#00525AFF",
+-        focus: "#00525AFF",
++        selected_text: "#F8671AFF",
++        focus: "#F8671AFF",
+         divider: "#27272733",
+         on: "#272727FF",
+         disabled: "#F5F5F580",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/warning b/resources/default_schema/com.system76.CosmicTheme.Light/v2/warning
+index b84809e..387b430 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/warning
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/warning
+@@ -3,8 +3,8 @@
+     hover: "#753714FF",
+     pressed: "#9B755FFF",
+     selected: "#753714FF",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#FFFFFFFF",
+     on: "#FFFFFFFF",
+     disabled: "#792C00FF",
+diff --git a/resources/default_schema/com.system76.CosmicTheme.Light/v2/warning_button b/resources/default_schema/com.system76.CosmicTheme.Light/v2/warning_button
+index 695ca71..7dd68ae 100644
+--- a/resources/default_schema/com.system76.CosmicTheme.Light/v2/warning_button
++++ b/resources/default_schema/com.system76.CosmicTheme.Light/v2/warning_button
+@@ -3,8 +3,8 @@
+     hover: "#753714FF",
+     pressed: "#9B755FFF",
+     selected: "#753714FF",
+-    selected_text: "#00525AFF",
+-    focus: "#00525AFF",
++    selected_text: "#F8671AFF",
++    focus: "#F8671AFF",
+     divider: "#000000FF",
+     on: "#FFFFFFFF",
+     disabled: "#792C00FF",
+-- 
+2.53.0
 
