@@ -18,8 +18,8 @@ NC_FLAG="-nc"   # first pass: no clean, reuses cached target/. For clean final b
 
 # Synex package version: all packages are versioned by the superproject tag,
 # not by each component's internal changelog. Bump this on every COSMIC release.
-SYNEX_VERSION="1.1.0+synex1"
-SYNEX_MESSAGE="Rebuild for COSMIC epoch-1.1.0"
+SYNEX_VERSION="1.3.0+synex1"
+SYNEX_MESSAGE="Rebuild for COSMIC epoch-1.3.0"
 export DEBEMAIL="root@synex.ar"
 export DEBFULLNAME="Synex Team"
 
