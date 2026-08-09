@@ -1,6 +1,6 @@
-From 2ac96449142a7bc0939276ebeb38b1c38b3ccafb Mon Sep 17 00:00:00 2001
+From c54f0bc967ef79b108c1b0d36a286ef54d1cfc83 Mon Sep 17 00:00:00 2001
 From: Bruno Ernesto Russo <root@synex.ar>
-Date: Wed, 24 Jun 2026 22:21:38 -0300
+Date: Sun, 9 Aug 2026 16:39:06 -0300
 Subject: [PATCH] Synex: replace pop-sound-theme with sound-theme-freedesktop
  (not available in Debian)
 
@@ -9,18 +9,18 @@ Subject: [PATCH] Synex: replace pop-sound-theme with sound-theme-freedesktop
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/debian/control b/debian/control
-index 16f8326..335d546 100644
+index c2b829c..22a8c82 100644
 --- a/debian/control
 +++ b/debian/control
-@@ -24,7 +24,7 @@ Depends:
+@@ -22,7 +22,7 @@ Architecture: amd64 arm64
+ Depends:
+   acpid,
    adw-gtk3,
-   qt5ct,
-   qt6ct,
 -  pop-sound-theme,
 +  sound-theme-freedesktop,
    pulseaudio-utils,
    ${misc:Depends},
    ${shlibs:Depends}
 -- 
-2.47.3
+2.53.0
 
