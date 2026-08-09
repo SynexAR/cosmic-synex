@@ -31,7 +31,9 @@ cosmic-synex/
     ├── cosmic-session.patch
     ├── cosmic-settings.patch
     ├── cosmic-settings-daemon.patch
-    └── cosmic-store.patch
+    ├── cosmic-sound-theme.patch
+    ├── cosmic-store.patch
+    └── xdg-desktop-portal-cosmic.patch
 ```
 
 ## Uso
@@ -56,7 +58,7 @@ Los paquetes resultantes quedan en `cosmic-epoch/synex-debs/`.
 
 ## Versión
 
-Los parches están generados sobre el tag **`epoch-1.3.0`** de cosmic-epoch. La versión objetivo se define en la variable `COSMIC_TAG` de `apply-patches.sh`.
+Los parches están generados sobre el tag **`epoch-1.5.0`** de cosmic-epoch. La versión objetivo se define en la variable `COSMIC_TAG` de `apply-patches.sh`.
 
 Todos los paquetes se versionan según el tag del superproyecto (`X.Y.Z+synexN`), no según el changelog interno de cada componente. La versión se aplica en el momento de la construcción mediante `dch`, definida en la variable `SYNEX_VERSION` de `build-cosmic-debs.sh`. Para usar tu propio versionado, editá esa variable.
 
